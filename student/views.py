@@ -5,7 +5,7 @@ from .models import *
 # Create your views here.
 def add_student(request):
     courses = Course.objects.all()
-    return render(request, "/Users/mac/Desktop/project/3.2/university/student/templates/student/student.html", {'courses':courses})
+    return render(request, "student/student.html", {'courses':courses})
 
 def adding_student(request):
     print(request.POST)
@@ -28,4 +28,4 @@ def view_student(request):
     students = Student.objects.all()
     teachers = Teacher.objects.all()
     addresses = Address.objects.all()
-    return render(request, "/Users/mac/Desktop/project/3.2/university/student/templates/student/view.html", {'courses':courses, 'students':students, 'teachers':teachers, 'addresses':addresses})
+    return render(request, "student/view.html", {'courses':courses, 'students':students, 'teachers':teachers, 'addresses':addresses})
